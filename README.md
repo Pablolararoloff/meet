@@ -114,4 +114,4 @@
 
 In the Meet app, serverless functions are used to manage user permissions for viewing public events from Google Calendar. These functions create and handle access tokens, allowing users to safely get event details for display in the app. We're using AWS Lambda for these serverless functions because it helps make the app scalable and saves on costs, without the need for a dedicated server just for authorization.
 
-  ENjoy =)
+
