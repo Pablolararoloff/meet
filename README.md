@@ -109,3 +109,5 @@
 - **Given** there are upcoming events in different cities
   - **When** a user wants to understand event distribution
   - **Then** a chart displaying the number of events in each city should be shown.
+
+  ENjoy =)
