@@ -20,5 +20,5 @@ functions:
     handler: handler.getAccessToken
     events:
       - http:
-          path: api/get-access-token # Example path, adjust as needed
+          path: api/token/{code}
           method: post
