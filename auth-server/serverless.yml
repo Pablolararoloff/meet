@@ -2,7 +2,7 @@ service: auth-server
 frameworkVersion: "3"
 provider:
   name: aws
-  runtime: nodejs20.x
+  runtime: nodejs18.x
   region: eu-central-1
   timeout: 30 
   environment:
@@ -16,3 +16,9 @@ functions:
       - http:
           path: api/get-auth-url
           method: get
+  getAccessToken: 
+    handler: handler.getAccessToken
+    events:
+      - http:
+          path: api/get-access-token # Example path, adjust as needed
+          method: post
