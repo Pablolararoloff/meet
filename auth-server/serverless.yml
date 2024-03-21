@@ -21,7 +21,7 @@ functions:
     events:
       - http:
           path: api/token/{code}
-          method: post
+          method: get 
   getCalendarEvents:
     handler: handler.getCalendarEvents
     events:

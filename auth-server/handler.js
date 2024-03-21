@@ -103,3 +103,15 @@ module.exports.getCalendarEvents = async (event) => {
     };
     });
 };
+
+exports.handler = async (event) => {
+  const response = {
+      statusCode: 200,
+      headers: {
+          "Access-Control-Allow-Origin": "*", // Allows requests from any origin
+          "Access-Control-Allow-Credentials": true // Necessary for cookies, authorization headers with HTTPS 
+      },
+      body: JSON.stringify({ message: "Hello from Lambda!" }),
+  };
+  return response;
+};
