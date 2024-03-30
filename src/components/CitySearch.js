@@ -1,11 +1,10 @@
 import { useState } from "react";
 
 const CitySearch = ({ allLocations }) => {
-  const [showSuggestions, setShowSuggestions] = useState(false); // is false because you don't want to show the suggestions list by default unless user clicks on the textbox
+  const [showSuggestions, setShowSuggestions] = useState(false); 
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
-  // The function to handle input changes, filtering suggestions based on input
   const handleInputChanged = (event) => {
     const value = event.target.value;
     const filteredLocations = allLocations ? allLocations.filter((location) => {
@@ -19,7 +18,7 @@ const CitySearch = ({ allLocations }) => {
     const handleItemClicked = (event) => {
       const value = event.target.textContent;
       setQuery(value);
-      setShowSuggestions(false); // to hide the list
+      setShowSuggestions(false); 
     };
 
  

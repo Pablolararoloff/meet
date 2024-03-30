@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import App from '../App';
 
+
 describe('<App /> component', () => {
   let AppDOM;
   beforeEach(() => {
@@ -19,6 +20,7 @@ describe('<App /> component', () => {
   test('renders NumberOfEvents', () => {
     expect(AppDOM.querySelector('#number-of-events')).toBeInTheDocument();
   });
+  
 
 });
 
