@@ -3,16 +3,6 @@ import { getEvents } from '../api';
 import EventList from '../components/EventList';
 import App from "../App";
 
-jest.mock('../api', () => ({
-  getEvents: () => Promise.resolve(new Array(32).fill().map((_, i) => ({
-    id: i,
-    summary: `Event ${i}`,
-    created: '2020-01-01',
-    location: `Location ${i}`,
-    description: `Description ${i}`
-  })))
-}));
-
 describe('<EventList /> component', ()=>{
   let EventListComponent;
   beforeEach(()=>{
@@ -40,5 +30,5 @@ describe('<EventList /> integration', ()=>{
       });
     });
 
- });
+});
 
