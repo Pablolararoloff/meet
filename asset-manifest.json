@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/pablocubo/meet.git/static/css/main.f855e6bc.css",
-    "main.js": "/pablocubo/meet.git/static/js/main.36892d41.js",
-    "static/js/453.4a9980c6.chunk.js": "/pablocubo/meet.git/static/js/453.4a9980c6.chunk.js",
-    "service-worker.js": "/pablocubo/meet.git/service-worker.js",
-    "static/media/logo.svg": "/pablocubo/meet.git/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
-    "index.html": "/pablocubo/meet.git/index.html",
-    "main.f855e6bc.css.map": "/pablocubo/meet.git/static/css/main.f855e6bc.css.map",
-    "main.36892d41.js.map": "/pablocubo/meet.git/static/js/main.36892d41.js.map",
-    "453.4a9980c6.chunk.js.map": "/pablocubo/meet.git/static/js/453.4a9980c6.chunk.js.map"
+    "main.css": "/meet/static/css/main.f855e6bc.css",
+    "main.js": "/meet/static/js/main.ce201bbc.js",
+    "static/js/453.4a9980c6.chunk.js": "/meet/static/js/453.4a9980c6.chunk.js",
+    "service-worker.js": "/meet/service-worker.js",
+    "index.html": "/meet/index.html",
+    "main.f855e6bc.css.map": "/meet/static/css/main.f855e6bc.css.map",
+    "main.ce201bbc.js.map": "/meet/static/js/main.ce201bbc.js.map",
+    "453.4a9980c6.chunk.js.map": "/meet/static/js/453.4a9980c6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.36892d41.js"
+    "static/js/main.ce201bbc.js"
   ]
 }
