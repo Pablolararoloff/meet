@@ -52,6 +52,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "gh-pages": "^5.0.0",
+    "jest-cucumber": "^4.1.0",
+    "puppeteer": "^18.1.0"
   }
 }
