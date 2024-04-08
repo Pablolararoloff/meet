@@ -4,15 +4,16 @@ body {
   background-color: #101010;
 }
 
-input, button {
+input,
+button {
   font-family: 'Roboto', sans-serif;
-  }
+}
 
 .App {
   text-align: center;
   padding: 2% 5%;
-  color: #333; 
-  background-color: #101010; 
+  color: #333;
+  background-color: #333333;
 }
 
 .App * {
@@ -26,7 +27,7 @@ ul {
 
 p {
   margin: 5px 0;
-  color: #666; 
+  color: #666;
 }
 
 input[type="text"],
@@ -34,32 +35,51 @@ input[type="number"] {
   padding: 8px 6px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc; 
-  font-size: 16px; 
-  line-height: 24px; 
-  width: 100%; 
-  max-width: 250px; 
-  margin-bottom: 20px; 
-  background-color: #fff; 
-}
-
-.city {
-  max-width: 250px; 
+  border: 1px solid #ccc;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 20px;
+  background-color: #fff;
 }
 
 #city-search {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px auto 40px; 
+  margin: 20px auto 40px;
+  position: relative;
+  width: 100%;
+}
+
+.city {
+  width: 100%;
+}
+
+.suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 10;
+
 }
 
 #number-of-events {
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  margin: 20px auto; 
+  align-items: center;
+  margin: 20px auto;
 }
+
 
 label[for="eventNumberInput"] {
   color: white;
@@ -71,31 +91,30 @@ label[for="eventNumberInput"] {
   top: 45px;
   z-index: 2;
   background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  border-radius: 4px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
 
-.suggestions > li {
+.suggestions>li {
   text-align: left;
-  padding: 10px; 
+  padding: 10px;
   background-color: #fff;
   cursor: pointer;
 }
 
-.suggestions > li:not(:last-child) {
-  border-bottom: 1px solid #eee; 
+.suggestions>li:not(:last-child) {
+  border-bottom: 1px solid #eee;
 }
 
-.suggestions > li:hover {
-  background-color: #e9e9e9; 
+.suggestions>li:hover {
+  background-color: #e9e9e9;
 }
 
 .event {
-  padding: 20px; 
-  margin-bottom: 20px; 
+  padding: 20px;
+  margin-bottom: 20px;
   text-align: left;
-  border: 1px solid #ddd; 
-  border-radius: 8px; 
-  background-color: #fff; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
 }
-
