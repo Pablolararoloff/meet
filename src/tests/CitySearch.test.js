@@ -1,5 +1,4 @@
 // src/__tests__/CitySearch.test.js
-
 import { render, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import CitySearch from '../components/CitySearch';
@@ -9,8 +8,11 @@ import { extractLocations, getEvents } from '../api';
 describe('<CitySearch /> component', () => {
   let CitySearchComponent;
   beforeEach(() => {
-    CitySearchComponent = render(<CitySearch allLocations={[]}
-      setInfoAlert={() => { }} />);
+    CitySearchComponent = render(<CitySearch
+      allLocations={[]}
+      setCurrentCity={() => { }}
+      setInfoAlert={() => { }}
+    />);
   });
 
   test('renders text input', () => {
