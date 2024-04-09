@@ -17,19 +17,29 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const allEvents = await getEvents();
-      let filteredEvents = allEvents;
-      if (currentCity !== "See all cities") {
-        filteredEvents = allEvents.filter(event => event.location === currentCity);
+      try {
+        const allEvents = await getEvents() || [];
+        if (!Array.isArray(allEvents)) {
+          console.error('getEvents did not return an array', allEvents);
+          return; // Prevent further execution if allEvents is not an array
+        }
+        let filteredEvents = allEvents;
+        if (currentCity !== "See all cities") {
+          filteredEvents = allEvents.filter(event => event.location === currentCity);
+        }
+      
+        filteredEvents = filteredEvents.slice(0, numberOfEvents);
+        setEvents(filteredEvents);
+        setAllLocations(extractLocations(allEvents));
+      } catch (error) {
+        console.error('Failed to fetch events:', error);
+        
       }
-      // Now using numberOfEvents to slice the array
-      filteredEvents = filteredEvents.slice(0, numberOfEvents);
-      setEvents(filteredEvents);
-      setAllLocations(extractLocations(allEvents));
     };
-
+  
     fetchData();
   }, [currentCity, numberOfEvents]);
+  
 
   const handleSetErrorAlert = (message) => setErrorAlert(message);
   const handleSetInfoAlert = (message) => setInfoAlert(message);
