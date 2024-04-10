@@ -23,7 +23,7 @@ const App = () => {
         const allEvents = await getEvents() || [];
         if (!Array.isArray(allEvents)) {
           console.error('getEvents did not return an array', allEvents);
-          return; // Prevent further execution if allEvents is not an array
+          return;
         }
         let filteredEvents = allEvents;
         if (currentCity !== "See all cities") {
