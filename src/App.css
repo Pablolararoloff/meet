@@ -13,7 +13,7 @@ button {
   text-align: center;
   padding: 2% 5%;
   color: #333;
-  background-color: #333333;
+  background-color: #FFD859;
 }
 
 .App * {
@@ -27,7 +27,7 @@ ul {
 
 p {
   margin: 5px 0;
-  color: #666;
+  color: #5a5a5a;
 }
 
 input[type="text"],
@@ -82,7 +82,7 @@ input[type="number"] {
 
 
 label[for="eventNumberInput"] {
-  color: white;
+  color: #5a5a5a;
 }
 
 .suggestions {
