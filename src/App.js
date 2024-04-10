@@ -14,6 +14,7 @@ const App = () => {
   const [errorAlert, setErrorAlert] = useState('');
   const [infoAlert, setInfoAlert] = useState('');
   const [warningAlert, setWarningAlert] = useState('');
+  const [isOnline, setIsOnline] = useState(navigator.onLine); 
 
 
   useEffect(() => {
@@ -28,19 +29,38 @@ const App = () => {
         if (currentCity !== "See all cities") {
           filteredEvents = allEvents.filter(event => event.location === currentCity);
         }
-      
+
         filteredEvents = filteredEvents.slice(0, numberOfEvents);
         setEvents(filteredEvents);
         setAllLocations(extractLocations(allEvents));
       } catch (error) {
         console.error('Failed to fetch events:', error);
-        
+
       }
+      setInfoAlert(isOnline ? "You are online." : "You are offline, data is being loaded from cache.");
     };
-  
-    fetchData();
-  }, [currentCity, numberOfEvents]);
-  
+
+   fetchData();
+  }, [currentCity, numberOfEvents, isOnline]);
+
+  useEffect(() => {
+    const handleOnline = () => {
+      setIsOnline(true);
+      setInfoAlert("You're back online.");
+    };
+    const handleOffline = () => {
+      setIsOnline(false);
+      setInfoAlert("You've lost connection. Data is loaded from cache.");
+    };
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
 
   const handleSetErrorAlert = (message) => setErrorAlert(message);
   const handleSetInfoAlert = (message) => setInfoAlert(message);
@@ -48,15 +68,15 @@ const App = () => {
 
   return (
     <div className="App">
-    <div className="Header">
-      <h1>Meet</h1>
-      <p className="subtitle">Choose your nearest city</p>
-    </div>
-    <div className="alerts-container">
-      {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
-      {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
-      {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
-    </div>
+      <div className="Header">
+        <h1>Meet</h1>
+        <p className="subtitle">Choose your nearest city</p>
+      </div>
+      <div className="alerts-container">
+        {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
+        {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
+      </div>
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} />
       <NumberOfEvents
         setNumberOfEvents={setNumberOfEvents}
