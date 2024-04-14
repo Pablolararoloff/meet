@@ -2,11 +2,24 @@
 
 body {
   background-color: #101010;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 input,
 button {
-  font-family: 'Roboto', sans-serif;
+  font-family: inherit;
+
+  padding: 8px 6px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 20px;
+  background-color: #fff;
 }
 
 .App {
@@ -20,6 +33,17 @@ button {
   box-sizing: border-box;
 }
 
+.chart-container {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
 ul {
   padding: 0;
   list-style: none;
@@ -28,20 +52,6 @@ ul {
 p {
   margin: 5px 0;
   color: #5a5a5a;
-}
-
-input[type="text"],
-input[type="number"] {
-  padding: 8px 6px;
-  border-radius: 4px;
-  outline: none;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  line-height: 24px;
-  width: 100%;
-  max-width: 250px;
-  margin-bottom: 20px;
-  background-color: #fff;
 }
 
 #city-search {
@@ -111,18 +121,44 @@ label[for="eventNumberInput"] {
 }
 
 .event {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   margin-bottom: 20px;
-  text-align: left;
-  border: 1px solid #ddd;
+  text-align: center;
+  border: 1px solid #e1e1e1;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #f3f3f3;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
 }
 
 .alerts-container {
-  position: fixed;
-  top: 0px;
-  left: 20px;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 250px;
   z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    grid-template-columns: 1fr;
+  }
+
+  .alerts-container {
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px;
+    z-index: 1000;
+  }
 }
