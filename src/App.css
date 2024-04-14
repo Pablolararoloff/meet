@@ -34,11 +34,12 @@ button {
 }
 
 .chart-container {
+  max-width: 100%;
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: 1fr 1fr;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding: 5px; /* Reduce padding if necessary */
+  margin: auto;
   gap: 20px;
   justify-content: center;
   align-items: center;
