@@ -6,6 +6,12 @@ body {
 
 }
 
+h1 {
+  font-size: 24px;
+  color: rgb(19, 19, 19);
+  /* Add any other styles you want */
+}
+
 input,
 button {
   font-family: inherit;
@@ -38,7 +44,7 @@ button {
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: 1fr 1fr;
-  padding: 5px; /* Reduce padding if necessary */
+  padding: 50px; 
   margin: auto;
   gap: 20px;
   justify-content: center;
@@ -120,18 +126,22 @@ label[for="eventNumberInput"] {
 .suggestions>li:hover {
   background-color: #e9e9e9;
 }
+#event-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 
 .event {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex: 1 1 500px; /* Flex item grows and shrinks with a maximum width of 500px */
   padding: 20px;
   margin-bottom: 20px;
   text-align: center;
   border: 1px solid #e1e1e1;
   border-radius: 8px;
   background-color: #f3f3f3;
+  max-width: calc(33.33% - 20px); /* Set the maximum width to occupy 1/3 of the container minus the gap */
 }
 
 .details {

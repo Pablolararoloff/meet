@@ -5,6 +5,7 @@ import CitySearch from '../components/CitySearch';
 import App from '../App';
 import { extractLocations, getEvents } from '../api';
 
+
 describe('<CitySearch /> component', () => {
   let CitySearchComponent;
   beforeEach(() => {
